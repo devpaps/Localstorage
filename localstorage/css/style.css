@@ -1,0 +1,175 @@
+:root {
+  --bg-color:  #FFF;
+  --jumbo-bg: #FF5252;
+  --kassa-bg: #1565C0;
+  --text-color: #666;
+  --text-color-validation: #ff0000;
+  --table-hover-bg: #d3d3d3;
+  --btn-color: #1565C0;
+  --btn-color-hover: #104f96;
+  --default-color: #FFFFFF;
+  --border-color: #d3d3d3;
+}
+
+body {
+  background: var(--bg-color);
+}
+
+section.jumbo {
+  padding: 1rem;
+  text-align: center;
+  background: var(--jumbo-bg);
+}
+
+section.jumbo h1 {
+  font-size: 5rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  padding-bottom: 4rem;
+}
+
+.kassa__form {
+  padding: 3rem;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+table {
+  table-layout: fixed;
+  margin-top: 2rem;
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+  color: var(--text-color);
+}
+
+table tbody tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+table tbody tr thead td {
+  font-size: 2rem;
+}
+
+table tbody tr thead {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+table tbody tr td {
+  padding: 1rem;
+}
+
+table tbody tr:not(:first-child):hover {
+  background: var(--table-hover-bg);
+}
+
+table tbody tr td {
+  padding: 1rem;
+}
+
+.btn:hover {
+  background: var(--table-hover-bg);
+}
+
+#btn_remove:hover {
+  background: var(--jumbo-bg);
+  color: var(--default-color);
+  cursor: pointer;
+}
+
+.wrapper section .form-group {
+  margin: 2rem 0;
+}
+
+#pop_up {
+  color: var(--text-color);
+  visibility: hidden;
+  margin-left: 15px;
+}
+
+input[type="text"] {
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+}
+
+input[type="text"] + .req {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 300ms ease;
+}
+
+input[type="text"]:focus + .req {
+  max-height: 50px;
+  transition: max-height 300ms ease;
+}
+
+.req {
+  color: var(--text-color-validation);
+  font-size: 0.9rem;
+}
+
+input[type="button"] {
+  padding: 0.1rem 1rem;
+  background: var(--btn-color);
+  color: var(--default-color);
+}
+
+input[type="button"]:hover {
+  background: var(--btn-color-hover);
+}
+
+#btn_remove {
+  padding: 0.1rem 1rem;
+  background: var(--btn-color);
+  color: var(--default-color);
+}
+
+/* Responsive section below */
+
+@media (max-width: 938px) {
+  main section {
+    padding: 0 1rem;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    display: block;
+    padding: 0.5rem;
+  }
+
+  input[type="button"] {
+    width: 100%;
+    display: block;
+    padding: 1rem;
+  }
+
+  #btn_remove {
+    width: 100%;
+    display: block;
+    padding: 1rem;
+    background: var(--btn-color);
+    color: var(--default-color);
+  }
+
+  #btn_remove:hover {
+    background: var(--btn-color-hover);
+    cursor: pointer;
+  }
+
+  #resultat {
+    padding: 1rem;
+  }
+
+  table tbody tr td {
+    background: var(--default-color);
+  }
+}

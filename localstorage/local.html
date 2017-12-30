@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/reboot.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Modul 4 - Lars Jönsson</title>
+</head>
+<body>
+  <section class="jumbo">
+    <h1>Modul 4 - Localstorage</h1>
+    <h3>En shoppinglista av Lars Jönsson</h3>
+  </section>
+
+  <main class="wrapper">
+    <form action="#">
+      <section>
+        <div class="form-group">
+          <p>Vad ska du köpa?</p>
+          <input type="text" id="vara" name="vara" placeholder="Ex. Mjölk" minlength="2" required>
+          <p class="req">Bara en produkt</p>
+        </div>
+
+        <div class="form-group">
+          <p>Hur många?</p>
+          <input type="text" id="antal" name="antal" placeholder="Ex. 4" required>
+        </div>
+
+        <div class="form-group">
+          <input type="button" class="btn" id="btn_store" value="Lägg till">
+          <span id="pop_up">Sparat</span>
+        </div>
+
+        <div class="form-group">
+          <input type="button" class="btn" id="btn_get" value="Hämta">
+        </div>
+      </section>
+    </form>
+  </div>
+
+
+    <div id="resultat"></div>
+
+  </main>
+
+  <script src="/javascript/func.js"></script>
+
+</body>
+</html>
