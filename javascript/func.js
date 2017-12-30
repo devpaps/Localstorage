@@ -1,10 +1,10 @@
-(function() {
+(function () {
   "use strict";
 
-  const btn_store = document.getElementById("btn_store");
+  var btn_store = document.getElementById("btn_store");
   btn_store.addEventListener("click", validate);
 
-  const btn_get = document.getElementById("btn_get");
+  var btn_get = document.getElementById("btn_get");
   btn_get.addEventListener("click", get);
 
   // Sparar data från input till localstorage
@@ -13,14 +13,14 @@
     localStorage.setItem(vara, antal);
 
     // Visar texten, "Sparat", det här inte direkt DRY men jag har inte kollat upp att man kan göra på något annat sätt
-    setTimeout(function() {
-      const pop_up = document.getElementById("pop_up");
+    setTimeout(function () {
+      var pop_up = document.getElementById("pop_up");
       pop_up.style.visibility = "visible";
     }, 20);
 
     // Tar bort texten, "Sparat"
-    setTimeout(function() {
-      const pop_up = document.getElementById("pop_up");
+    setTimeout(function () {
+      var pop_up = document.getElementById("pop_up");
       pop_up.style.visibility = "hidden";
     }, 1500);
 
@@ -70,17 +70,15 @@
     }
 
     // https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces#Creating_a_table_dynamically_.28back_to_Sample1.html.29
-    const visa = document.getElementById("resultat");
-    const table = document.createElement("table");
-    const tbody = document.createElement("tbody");
+    var visa = document.getElementById("resultat");
+    var table = document.createElement("table");
+    var tbody = document.createElement("tbody");
 
     // Gör tableHeadern
-    const thead = table.createTHead();
-    const row = document.createElement("tr");
-    const cell = document.createElement("td");
-    const text = document.createTextNode(
-      `Dina varor, ${localStorage.length} st`
-    );
+    var thead = table.createTHead();
+    var row = document.createElement("tr");
+    var cell = document.createElement("td");
+    var text = document.createTextNode("Dina varor, " + localStorage.length + " st");
     cell.appendChild(text);
     thead.appendChild(cell);
     row.appendChild(thead);
@@ -89,23 +87,23 @@
     visa.appendChild(table);
 
     // Loopar igenom localstorage
-    for (const i in localStorage) {
+    for (var i in localStorage) {
       if (localStorage.hasOwnProperty(i)) {
-        const varde = localStorage[i];
-        const row = document.createElement("tr");
-        const cell = document.createElement("td");
-        const text = document.createTextNode(`${i}, ${varde} st`);
-        cell.appendChild(text);
-        row.appendChild(cell);
-        tbody.appendChild(row);
+        var varde = localStorage[i];
+        var _row = document.createElement("tr");
+        var _cell = document.createElement("td");
+        var _text = document.createTextNode(i + ", " + varde + " st");
+        _cell.appendChild(_text);
+        _row.appendChild(_cell);
+        tbody.appendChild(_row);
         table.appendChild(tbody);
         visa.appendChild(table);
       }
     }
 
     // Skapar en "ta bort" knapp av listan
-    const ta_bort = document.createElement("button");
-    const s = document.createTextNode(`Radera lista`);
+    var ta_bort = document.createElement("button");
+    var s = document.createTextNode("Radera lista");
     ta_bort.classList.add("btn");
     ta_bort.setAttribute("id", "btn_remove");
     ta_bort.style.marginTop = "3rem";
@@ -113,19 +111,19 @@
     visa.appendChild(ta_bort);
 
     // Lägger till en eventlistener på den för att den ska starta remove_list funktionen
-    const btn_remove = document.getElementById("btn_remove");
+    var btn_remove = document.getElementById("btn_remove");
     btn_remove.addEventListener("click", remove_list);
   }
 
   function remove_list() {
-    const svar = confirm("Vill du verkligen ta bort listan?");
+    var svar = confirm("Vill du verkligen ta bort listan?");
 
     // Här tar jag bort tabellen samt knappen om användaren svara Ok
     if (svar === true) {
       localStorage.clear();
-      const table = document.getElementsByTagName("table")[0];
-      const btn_remove = document.getElementById("btn_remove");
-      const resultat = document.getElementById("resultat");
+      var table = document.getElementsByTagName("table")[0];
+      var btn_remove = document.getElementById("btn_remove");
+      var resultat = document.getElementById("resultat");
       resultat.removeChild(table);
       resultat.removeChild(btn_remove);
 
