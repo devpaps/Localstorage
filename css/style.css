@@ -27,7 +27,7 @@ section.jumbo h1 {
 
 main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-template-rows: auto;
   grid-gap: 20px;
   padding-bottom: 4rem;
@@ -171,5 +171,11 @@ input[type="button"]:hover {
 
   table tbody tr td {
     background: var(--default-color);
+  }
+}
+
+@media (max-width: 550px) {
+  section.jumbo h1 {
+    font-size: 3rem;
   }
 }
