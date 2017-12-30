@@ -42,7 +42,7 @@
       document.getElementById("antal").style.border = "2px solid red";
       alert("Du får bara ange siffor");
       return;
-    } else if (!vara.match(/^[a-ö-A-Ö]+$/)) {
+    } else if (!vara.match(/^[a-ö-A-Ö ]+$/)) {
       document.getElementById("vara").style.border = "2px solid red";
       alert("Du får bara ange bokstäver");
       return;
