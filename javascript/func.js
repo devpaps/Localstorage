@@ -58,20 +58,21 @@
 
   // Visar data från localstorage och lägger det snyggt i en tabell
   function get() {
-    // Gör knapparna oklickabara
-    document.getElementById("btn_store").setAttribute("disabled", "");
-    document.getElementById("btn_get").setAttribute("disabled", "");
-
-    // https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces#Creating_a_table_dynamically_.28back_to_Sample1.html.29
-    const visa = document.getElementById("resultat");
-    const table = document.createElement("table");
-    const tbody = document.createElement("tbody");
 
     // Om det inte finns något lagrat i localstorage och användaren trycker på hämta-knappen, så visas en alert
     if (localStorage.length === 0) {
       alert("Du har inte sparat något!");
       return;
+    } else {
+      // Gör knapparna oklickabara
+      document.getElementById("btn_store").setAttribute("disabled", "");
+      document.getElementById("btn_get").setAttribute("disabled", "");
     }
+
+    // https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces#Creating_a_table_dynamically_.28back_to_Sample1.html.29
+    const visa = document.getElementById("resultat");
+    const table = document.createElement("table");
+    const tbody = document.createElement("tbody");
 
     // Gör tableHeadern
     const thead = table.createTHead();
