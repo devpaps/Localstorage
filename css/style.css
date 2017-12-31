@@ -1,14 +1,17 @@
 :root {
-  --bg-color:  #FFF;
+  --bg-color:  #FFFFFF;
   --jumbo-bg: #FF5252;
   --kassa-bg: #1565C0;
-  --text-color: #666;
-  --text-color-validation: #ff0000;
-  --table-hover-bg: #d3d3d3;
+  --text-color: #3A3A3A;
+  --text-color-validation: #FF0000;
+  --table-hover-bg: #D3D3D3;
   --btn-color: #1565C0;
   --btn-color-hover: #104f96;
   --default-color: #FFFFFF;
-  --border-color: #d3d3d3;
+  --border-color: #D3D3D3;
+
+  --font-header: 'Montserrat', sans-serif;
+  --font-text: 'Open Sans', sans-serif;
 }
 
 body {
@@ -18,7 +21,8 @@ body {
 section.jumbo {
   padding: 1rem;
   text-align: center;
-  background: var(--jumbo-bg);
+  border-bottom: 1px solid #999;
+  font-family: var(--font-header);
 }
 
 section.jumbo h1 {
@@ -31,10 +35,16 @@ main {
   grid-template-rows: auto;
   grid-gap: 20px;
   padding-bottom: 4rem;
+  font-family: var(--font-text);
+  color: var(--font-text);
 }
 
-.kassa__form {
-  padding: 3rem;
+.form-group p {
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-color);
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .wrapper {
@@ -47,7 +57,8 @@ table {
   margin-top: 2rem;
   width: 100%;
   border-collapse: collapse;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
   color: var(--text-color);
 }
 
@@ -98,17 +109,21 @@ table tbody tr td {
 
 input[type="text"] {
   border: 1px solid var(--border-color);
-  border-radius: 3px;
+  padding-left: 10px;
 }
 
 input[type="text"] + .req {
   overflow: hidden;
   max-height: 0;
+  -webkit-transition: max-height 300ms ease;
+  -o-transition: max-height 300ms ease;
   transition: max-height 300ms ease;
 }
 
 input[type="text"]:focus + .req {
   max-height: 50px;
+  -webkit-transition: max-height 300ms ease;
+  -o-transition: max-height 300ms ease;
   transition: max-height 300ms ease;
 }
 
@@ -117,21 +132,19 @@ input[type="text"]:focus + .req {
   font-size: 0.9rem;
 }
 
-input[type="button"] {
-  padding: 0.1rem 1rem;
+input[type="button"], #btn_remove {
+  padding: 0.1rem 2rem;
   background: var(--btn-color);
   color: var(--default-color);
+  cursor: pointer;
+  border-radius: 50px;
 }
 
 input[type="button"]:hover {
   background: var(--btn-color-hover);
 }
 
-#btn_remove {
-  padding: 0.1rem 1rem;
-  background: var(--btn-color);
-  color: var(--default-color);
-}
+
 
 /* Responsive section below */
 
