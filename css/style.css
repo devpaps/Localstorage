@@ -3,7 +3,7 @@
   --jumbo-bg: #FF5252;
   --kassa-bg: #1565C0;
   --text-color: #3A3A3A;
-  --text-color-validation: #FF0000;
+  --btn-background-delete-button: #FF0000;
   --table-hover-bg: #D3D3D3;
   --btn-color: #1565C0;
   --btn-color-hover: #104f96;
@@ -87,16 +87,6 @@ table tbody tr td {
   padding: 1rem;
 }
 
-.btn:hover {
-  background: var(--table-hover-bg);
-}
-
-#btn_remove:hover {
-  background: var(--jumbo-bg);
-  color: var(--default-color);
-  cursor: pointer;
-}
-
 .wrapper section .form-group {
   margin: 2rem 0;
 }
@@ -132,20 +122,31 @@ input[type="text"]:focus + .req {
   font-size: 0.9rem;
 }
 
-input[type="button"], #btn_remove {
+input[type="button"] {
   padding: 0.1rem 2rem;
   background: var(--btn-color);
   color: var(--default-color);
   cursor: pointer;
   border-radius: 50px;
-  border: 1px solid var(--btn-color);
+  border: none;
 }
 
-input[type="button"]:hover {
+input[type="button"]:hover{
   background: var(--btn-color-hover);
 }
 
+#btn_remove {
+  background: var(--btn-color);
+  color: var(--default-color);
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  padding: 0 1rem;
+}
 
+#btn_remove:hover {
+  background: var(--btn-background-delete-button);
+}
 
 /* Responsive section below */
 
