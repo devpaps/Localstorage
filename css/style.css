@@ -127,7 +127,6 @@ input[type="button"] {
   background: var(--btn-color);
   color: var(--default-color);
   cursor: pointer;
-  border-radius: 50px;
   border: none;
 }
 
@@ -138,7 +137,6 @@ input[type="button"]:hover{
 #btn_remove {
   background: var(--btn-color);
   color: var(--default-color);
-  border-radius: 50px;
   border: none;
   cursor: pointer;
   padding: 0 1rem;
