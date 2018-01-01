@@ -39,14 +39,6 @@ main {
   color: var(--font-text);
 }
 
-.form-group p {
-  margin-bottom: 0.5rem;
-  font-size: 0.8rem;
-  color: var(--text-color);
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
 .wrapper {
   max-width: 960px;
   margin: 5rem auto 0;
@@ -87,8 +79,20 @@ table tbody tr td {
   padding: 1rem;
 }
 
+.wrapper section h1 {
+  margin-bottom: 4rem;
+}
+
 .wrapper section .form-group {
   margin: 2rem 0;
+}
+
+.form-group p {
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-color);
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .wrapper form section .form-group:nth-child(3n+1) {
